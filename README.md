@@ -1,5 +1,5 @@
 # CSharpOsuAPI
-A library that allow you to work with osu API!\n
+A library that allow you to work with osu API!
 For Example:
 Getting main class osuApi osuapi = new osuApi(osuToken);
 
