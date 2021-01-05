@@ -1,5 +1,5 @@
 # osuApiSharp
-A library that allow you to work with osuApi!
+A library that allow you to work with osu API!
 For Example:
 Getting main class osuApi osuapi = new osuApi(osuToken);
 
