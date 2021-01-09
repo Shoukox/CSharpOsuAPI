@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Net;
 using System.Threading.Tasks;
 using tgbot_final.Bot.Osu.Enums;
@@ -30,23 +29,23 @@ namespace tgbot_final.Bot.Osu
         {
             this.token = token;
         }
-        ModsClass.Mods getMod(ModsClass.Mods mods, ref string mod)
+        Mods getMod(Mods mods, ref string mod)
         {
-            if (mod == "NF") mods = mods | ModsClass.Mods.NoFail;
-            else if (mod == "EZ") mods = mods | ModsClass.Mods.Easy;
-            else if (mod == "TD") mods = mods | ModsClass.Mods.TouchDevice;
-            else if (mod == "HD") mods = mods | ModsClass.Mods.Hidden;
-            else if (mod == "HR") mods = mods | ModsClass.Mods.Hardrock;
-            else if (mod == "NC") mods = mods | ModsClass.Mods.Nightcore;
-            else if (mod == "DT") mods = mods | ModsClass.Mods.DoubleTime;
-            else if (mod == "HT") mods = mods | ModsClass.Mods.HalfTime;
-            else if (mod == "FL") mods = mods | ModsClass.Mods.Flashlight;
-            else mods = mods & ModsClass.Mods.NoMod;
+            if (mod == "NF") mods = mods | Mods.NoFail;
+            else if (mod == "EZ") mods = mods | Mods.Easy;
+            else if (mod == "TD") mods = mods | Mods.TouchDevice;
+            else if (mod == "HD") mods = mods | Mods.Hidden;
+            else if (mod == "HR") mods = mods | Mods.Hardrock;
+            else if (mod == "NC") mods = mods | Mods.Nightcore;
+            else if (mod == "DT") mods = mods | Mods.DoubleTime;
+            else if (mod == "HT") mods = mods | Mods.HalfTime;
+            else if (mod == "FL") mods = mods | Mods.Flashlight;
+            else mods = mods & Mods.NoMod;
             return mods;
         }
-        public ModsClass.Mods CalculateModsMods(int enabled_mods)
+        public Mods CalculateModsMods(int enabled_mods)
         {
-            ModsClass.Mods mods = new ModsClass.Mods();
+            Mods mods = new Mods();
             string curmods = "";
             for (int i = modsValues.Length / 2 - 1; i >= 0; i--)
             {
@@ -61,23 +60,20 @@ namespace tgbot_final.Bot.Osu
             }
             return mods;
         }
-        string CalculateMods(int enabled_mods)
+        int CalculateMods(int enabled_mods)
         {
-            if (enabled_mods == 0) return "+NoMod";
-            else
+            int curmods = 0;
+            for (int i = modsValues.Length / 2 - 1; i >= 0; i--)
             {
-                string curmods = "";
-                for (int i = modsValues.Length / 2 - 1; i >= 0; i--)
+                if (enabled_mods == 0) break;
+                if (int.Parse(modsValues[i, 0]) <= enabled_mods)
                 {
-                    if (enabled_mods == 0) break;
-                    if (int.Parse(modsValues[i, 0]) <= enabled_mods)
-                    {
-                        curmods += modsValues[i, 1];
-                        enabled_mods -= int.Parse(modsValues[i, 0]);
-                    }
+                    if (modsValues[i, 1] == "HR" || modsValues[i, 1] == "DT" || modsValues[i, 1] == "NC")
+                        curmods += int.Parse(modsValues[i, 0]);
+                    enabled_mods -= int.Parse(modsValues[i, 0]);
                 }
-                return "+" + curmods;
             }
+            return curmods;
         }
         public async Task<User> GetUserInfoByNameAsync(string name)
         {
@@ -112,7 +108,7 @@ namespace tgbot_final.Bot.Osu
             {
                 Score[] returndata;
                 using (WebClient wc = new WebClient())
-                { 
+                {
                     string doc = wc.DownloadString($"https://osu.ppy.sh/api/get_user_recent?k={token}&u={name}&limit={count}");
                     if (doc.Length == 2) return null;
                     returndata = JsonConvert.DeserializeObject<Score[]>(doc);
@@ -120,15 +116,18 @@ namespace tgbot_final.Bot.Osu
                 return returndata;
             });
         }
-        public async Task<Beatmap> GetBeatmapByBeatmapIdAsync(long beatmap_id)
+        public async Task<Beatmap> GetBeatmapByBeatmapIdAsync(long beatmap_id, int mods = 0)
         {
             return await Task.Run(() =>
             {
                 using (WebClient wc = new WebClient())
                 {
-                    string doc = wc.DownloadString($"https://osu.ppy.sh/api/get_beatmaps?k={token}&b={beatmap_id}");
+                    mods = CalculateMods(mods);
+                    string doc = wc.DownloadString($"https://osu.ppy.sh/api/get_beatmaps?k={token}&b={beatmap_id}&mods={mods}");
                     if (doc.Length == 2) return null;
-                    return JsonConvert.DeserializeObject<Beatmap[]>(doc)[0];
+                    var data = JsonConvert.DeserializeObject<Beatmap[]>(doc)[0];
+                    if (mods >= 576 || mods >= 64) data.bpm = (double.Parse(data.bpm) * 1.5).ToString(); 
+                    return data;
                 }
             });
         }

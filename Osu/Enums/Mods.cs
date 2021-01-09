@@ -2,8 +2,6 @@
 
 namespace tgbot_final.Bot.Osu.Enums
 {
-    class ModsClass
-    {
         [Flags]
         public enum Mods
         {
@@ -22,5 +20,4 @@ namespace tgbot_final.Bot.Osu.Enums
             MapChanging = Hardrock | Easy | SpeedChanging,
         }
 
-    }
 }

@@ -43,7 +43,7 @@
         public string diff_aim { get; set; }
         public string diff_speed { get; set; }
         public string difficultyrating { get; set; }
-        public string approved { private get; set; }
+        private string approved { get; set; }
         public string GetApproved()
         {
             if (approved == "1") return "Ranked";
