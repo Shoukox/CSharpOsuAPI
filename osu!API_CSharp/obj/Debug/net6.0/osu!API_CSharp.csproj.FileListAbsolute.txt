@@ -1,0 +1,12 @@
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.csproj.AssemblyReference.cache
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.AssemblyInfoInputs.cache
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.AssemblyInfo.cs
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\bin\Debug\net6.0\osu!API_CSharp.deps.json
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\bin\Debug\net6.0\osu!API_CSharp.dll
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\bin\Debug\net6.0\osu!API_CSharp.pdb
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.dll
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\refint\osu!API_CSharp.dll
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\osu!API_CSharp.pdb
+C:\Users\Shoukko\source\repos\osu!API_CSharp\osu!API_CSharp\obj\Debug\net6.0\ref\osu!API_CSharp.dll

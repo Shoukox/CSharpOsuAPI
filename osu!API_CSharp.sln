@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "osu!API_CSharp", "osu!API_CSharp\osu!API_CSharp.csproj", "{FC28025D-6191-4CF9-A030-5653D3C0C232}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "osu!API_CSharp.Example", "osu!API_CSharp.Example\osu!API_CSharp.Example.csproj", "{2359A2E5-ECD6-4C3A-A47F-F60FCE6BEE55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC28025D-6191-4CF9-A030-5653D3C0C232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC28025D-6191-4CF9-A030-5653D3C0C232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC28025D-6191-4CF9-A030-5653D3C0C232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC28025D-6191-4CF9-A030-5653D3C0C232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2359A2E5-ECD6-4C3A-A47F-F60FCE6BEE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2359A2E5-ECD6-4C3A-A47F-F60FCE6BEE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2359A2E5-ECD6-4C3A-A47F-F60FCE6BEE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2359A2E5-ECD6-4C3A-A47F-F60FCE6BEE55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {550ACA5D-E2C7-4661-B893-CE50EF2FC425}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jUKuS5WyYgtRO9oc32Ix/olA3f5tYOmPOU+DMFP/FEPYwnNWWBT6Vtn9baBdMwF0WkMBO7cwk9WPHDRP69xQlw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Shoukko\\source\\repos\\osu!API_CSharp\\osu!API_CSharp\\osu!API_CSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shoukko\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
