@@ -9,7 +9,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             //Creating new instance of osuClient
-            osuApiClient osuClient = new osuApiClient("67368ae869a6b45f012b6a7a8536ee65226ad257");
+            osuApiClient osuClient = new osuApiClient("your_token");
 
             //Getting user
             var user = osuClient.GetUserAsync("Shoukko").Result;
